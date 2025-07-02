@@ -1,0 +1,17 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        number_index_map = {}
+
+        for current_index, current_number in enumerate(nums):
+            number_needed = target - current_number
+            if number_needed in number_index_map:
+                return [number_index_map[number_needed], current_index]
+            number_index_map[current_number] = current_index
+
+        
+        return []
